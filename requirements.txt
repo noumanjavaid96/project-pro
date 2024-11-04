@@ -5,3 +5,4 @@ altair
 PyPDF2 
 pandas
 numpy
+google-generativeai
