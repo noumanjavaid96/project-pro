@@ -1,4 +1,7 @@
 openai
 streamlit
-pypdf2
 python-docx
+altair 
+PyPDF2 
+pandas
+numpy
