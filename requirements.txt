@@ -1,5 +1,4 @@
 openai
 streamlit
-docx
 pypdf2
 python-docx
