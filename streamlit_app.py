@@ -27,7 +27,7 @@ def configure_gemini(api_key: str):
         "max_output_tokens": 8192,
     }
     return genai.GenerativeModel(
-        model_name="gemini-1.5-pro-002",
+        model_name="gemini-1.5-pro",
         generation_config=generation_config,
     )
 
@@ -96,7 +96,7 @@ def analyze_with_openai(client: OpenAI, abpi_content: str, doc_content: str) -> 
     """Analyze document using OpenAI (fallback method)"""
     try:
         response = client.chat.completions.create(
-            model="gpt-4",
+            model="gpt-4o",
             messages=[
                 {"role": "system", "content": "You are an expert in ABPI Code compliance analysis."},
                 {"role": "user", "content": f"""
@@ -131,7 +131,7 @@ with st.expander("Configure API Keys"):
     openai_api_key = st.text_input("Enter your OpenAI API key (fallback):", type="password")
 
 if gemini_api_key:
-    gemini_model = configure_gemini(gemini_api_key)
+    gemini_model = configure_gemini(api_key=gemini_api_key)
     if openai_api_key:
         openai_client = OpenAI(api_key=openai_api_key)
 
