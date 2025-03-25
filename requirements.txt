@@ -5,5 +5,5 @@ altair
 PyPDF2 
 pandas
 numpy
-google-generativeai
+google-genai
 tiktoken
